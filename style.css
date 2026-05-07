@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Atma:wght@300;400;500;600;700&family=Bitcount+Prop+Double:wght@100..900&family=Cause:wght@100..900&family=Dokdo&family=Inconsolata:wght@200..900&family=Sixtyfour+Convergence&family=Supermercado+One&display=swap");
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
