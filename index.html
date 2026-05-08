@@ -36,11 +36,10 @@
       </nav>
     </header>
     <main>
-      
       <img
-      id="bocchi-image"
-      src="https://media1.tenor.com/m/DCNqJfL6jRYAAAAd/bocchi-bocchi-the-rock.gif"
-      alt="Bocchi the Rock"
+        id="bocchi-image"
+        src="https://media1.tenor.com/m/DCNqJfL6jRYAAAAd/bocchi-bocchi-the-rock.gif"
+        alt="Bocchi the Rock"
       />
       <div class="card">
         <p>
@@ -61,23 +60,49 @@
           quits.
         </p>
       </div>
-        <iframe
-        data-testid="embed-iframe"
-        style="border-radius: 12px"
-        src="https://open.spotify.com/embed/album/5ZGzGGNAB6U7QlKpdaMu0d?utm_source=generator"
-        width="0"
-        height="0"
-        frameborder="0"
-        allowfullscreen=""
-        allow="
-        autoplay;
-        clipboard-write;
-        encrypted-media;
-        fullscreen;
-        picture-in-picture;
-        "
-        loading="lazy"
-        ></iframe>
-      </main>
+      <div class="player">
+        <img id="sample" src="./assets/bocchi-the-rock.jpg" alt="sample" />
+        <div id="buttons">
+          <button id="backward">
+            <svg width="40" height="40" viewBox="0 0 24 24">
+              <rect
+                x="5"
+                y="5"
+                width="2"
+                height="14"
+                rx="1"
+                fill="currentColor"
+              />
+              <path d="M19 18V6L9 12L19 18Z" fill="currentColor" />
+            </svg>
+          </button>
+          <button id="pause-play">
+            <svg
+              width="40"
+              height="40"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M8 5V19L19 12L8 5Z" fill="currentColor" />
+            </svg>
+          </button>
+          <button id="forward">
+            <svg width="40" height="40" viewBox="0 0 24 24">
+              <rect
+                x="5"
+                y="5"
+                width="2"
+                height="14"
+                rx="1"
+                fill="currentColor"
+              />
+              <path d="M19 18V6L9 12L19 18Z" fill="currentColor" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </main>
+    <script src="script.js"></script>
   </body>
 </html>

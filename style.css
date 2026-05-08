@@ -6,7 +6,10 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background-color: #fdc7d5;
+  background-image: url(./assets/bocchi-and-her-puppy.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-attachment: fixed;
   min-height: 100vh;
 }
 
@@ -52,17 +55,19 @@ nav {
   left: -40px;
   border-radius: 8px;
   width: 150px;
-  display: none;
   visibility: hidden;
   padding: 20px;
   flex-direction: column;
 }
 
-.info ul li:hover {
+.info ul li{
   display: flex;
   align-items: center;
-  background-color: #f79fb2;
   height: 60px;
+}
+
+.info ul li:hover {
+  background-color: #f79fb2;
   color: white;
   border-radius: 8px;
   transition: all ease-in-out 100ms;
@@ -108,10 +113,59 @@ nav {
   width: 640px;
 }
 
-iframe {
-  position: relative;
-  bottom: 800px;
-  left: 1240px;
-  width: 600px;
-  height: 80vh;
+/* Music player styling */
+.player {
+  display: flex;
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  border: none;
+  background-color: rgba(119, 30, 35, 1);
+  border-radius: 8px;
+  width: 400px;
+}
+
+#buttons {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  left: 150px;
+  gap: 40px;
+}
+
+#sample {
+  position: absolute;
+  object-fit: cover;
+  right: 300px;
+  width: 100px;
+  border-radius: 5px;
+  height: 100px;
+}
+
+#backward{
+  background-color: transparent;
+  border: none;
+  color: white;
+}
+
+#pause-play{
+  background-color: transparent;
+  border: none;
+  color: white;
+}
+
+#forward{
+  background-color: transparent;
+  border: none;
+  transform: rotate(-180deg);
+  color: white;
+}
+
+.play{
+  background-color: transparent;
+  border: none;
+  color: white;
 }
