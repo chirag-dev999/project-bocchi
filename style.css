@@ -60,7 +60,7 @@ nav {
   flex-direction: column;
 }
 
-.info ul li{
+.info ul li {
   display: flex;
   align-items: center;
   height: 60px;
@@ -116,56 +116,103 @@ nav {
 /* Music player styling */
 .player {
   display: flex;
+  align-items: center;
+
   position: fixed;
   left: 20px;
   bottom: 20px;
-  align-items: center;
-  justify-content: center;
-  height: 100px;
-  border: none;
+
+  width: 400px;
+  height: 120px;
+
   background-color: rgba(119, 30, 35, 1);
   border-radius: 8px;
-  width: 400px;
+
+  gap: 15px;
 }
 
 #buttons {
   display: flex;
-  position: absolute;
-  align-items: center;
-  left: 150px;
   gap: 40px;
+
+  margin-top: 15px;
 }
 
 #sample {
-  position: absolute;
+  width: 120px;
+  height: 120px;
+
   object-fit: cover;
-  right: 300px;
-  width: 100px;
   border-radius: 5px;
-  height: 100px;
+
+  flex-shrink: 0;
 }
 
-#backward{
+#backward {
   background-color: transparent;
   border: none;
   color: white;
 }
 
-#pause-play{
+#pause-play {
   background-color: transparent;
   border: none;
   color: white;
 }
 
-#forward{
+#forward {
   background-color: transparent;
   border: none;
   transform: rotate(-180deg);
   color: white;
 }
 
-.play{
+.play {
   background-color: transparent;
   border: none;
   color: white;
+}
+
+#SongName {
+  color: white;
+  font-family: atma;
+  font-size: x-large;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  width: 240px;
+  display: block;
+}
+
+#content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+#volume-slider {
+  appearance: none;
+
+  width: 120px;
+  height: 6px;
+
+  background: #f79fb2;
+  border-radius: 10px;
+
+  cursor: pointer;
+}
+
+#volume-slider::-webkit-slider-thumb {
+  appearance: none;
+
+  width: 15px;
+  height: 15px;
+
+  border-radius: 100%;
+  background: white;
+
+  cursor: pointer;
 }
