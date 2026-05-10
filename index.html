@@ -69,7 +69,9 @@
           />
           <a id="SONG1" href="#!"
             ><span class="tooltip"
-              >Hitori Bocchi Tokyo<span class="tooltip-text">Click to play</span></span
+              >Hitori Bocchi Tokyo<span class="tooltip-text"
+                >Click to play</span
+              ></span
             ></a
           >
         </div>
@@ -82,7 +84,9 @@
           />
           <a id="SONG2" href="#!"
             ><span class="tooltip"
-              >If I could be a constellation<span class="tooltip-text">Click to play</span></span
+              >If I could be a constellation<span class="tooltip-text"
+                >Click to play</span
+              ></span
             ></a
           >
         </div>
@@ -96,7 +100,9 @@
           />
           <a id="SONG3" href="#!"
             ><span class="tooltip"
-              >Rockn'Roll, Morning Light Falls on You<span class="tooltip-text">Click to play</span></span
+              >Rockn'Roll, Morning Light Falls on You<span class="tooltip-text"
+                >Click to play</span
+              ></span
             ></a
           >
         </div>
@@ -144,13 +150,23 @@
               </svg>
             </button>
           </div>
-          <input
-            type="range"
-            id="volume-slider"
-            min="0"
-            max="100"
-            value="100"
-          />
+          <div class="seek-controls">
+            <input type="range" id="seek-bar" min="0" max="100" value="0" />
+            <div class="time">
+              <span id="current-time">0:00</span> /
+              <span id="duration">0:00</span>
+            </div>
+          </div>
+
+          <div class="volume-container">
+            <input
+              type="range"
+              id="volume-slider"
+              min="0"
+              max="100"
+              value="100"
+            />
+          </div>
         </div>
       </div>
     </main>
