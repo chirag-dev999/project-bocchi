@@ -26,10 +26,13 @@ let CurrentSong = new Audio(Songs[queue].song);
 const PpButton = document.getElementById("pause-play");
 const ForwardButton = document.getElementById("forward");
 const BackwardButton = document.getElementById("backward");
-
+const VolumeSlider = document.getElementById("volume-slider");
 const CoverArt = document.getElementById("sample");
 const SongTitle = document.getElementById("SongName");
-const VolumeSlider = document.getElementById("volume-slider");
+
+const SONG1 = document.getElementById("SONG1");
+const SONG2 = document.getElementById("SONG2");
+const SONG3 = document.getElementById("SONG3");
 
 const PlaySvg = `<svg width="40" height="40" viewBox="0 0 24 24" fill="none">
   <rect x="6" y="4" width="4" height="16" rx="1" fill="currentColor"/>
@@ -42,7 +45,6 @@ const PauseSvg = `<svg width="40" height="40" viewBox="0 0 24 24" fill="none">
 
 const UpdateUI = () => {
   CoverArt.src = Songs[queue].cover;
-
   SongTitle.textContent = Songs[queue].title;
 };
 
@@ -51,12 +53,22 @@ const ChangeSong = () => {
 
   CurrentSong = new Audio(Songs[queue].song);
 
+  CurrentSong.addEventListener("ended", () => {
+    queue++;
+
+    if (queue >= Songs.length) {
+      queue = 0;
+    }
+
+    ChangeSong();
+  });
+
   CurrentSong.volume = VolumeSlider.value / 100;
   UpdateUI();
 
-  if (isPlaying) {
-    CurrentSong.play();
-  }
+  CurrentSong.play();
+  PpButton.innerHTML = PlaySvg;
+  isPlaying = true;
 };
 
 UpdateUI();
@@ -95,16 +107,21 @@ BackwardButton.addEventListener("click", () => {
   ChangeSong();
 });
 
-CurrentSong.addEventListener("ended", () => {
-  queue++;
+VolumeSlider.addEventListener("input", () => {
+  CurrentSong.volume = VolumeSlider.value / 100;
+});
 
-  if (queue >= Songs.length) {
-    queue = 0;
-  }
-
+SONG1.addEventListener("click", () => {
+  queue = 0;
   ChangeSong();
 });
 
-VolumeSlider.addEventListener("input", () => {
-  CurrentSong.volume = VolumeSlider.value / 100;
+SONG2.addEventListener("click", () => {
+  queue = 1;
+  ChangeSong();
+});
+
+SONG3.addEventListener("click", () => {
+  queue = 2;
+  ChangeSong();
 });
